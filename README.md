@@ -84,7 +84,7 @@ Once you have updated `uart_init`, you will output the configuration to the QEMU
 
 $$\mathit{BaudRate} = \frac{\mathit{FUARTCLK}}{16 \times \mathit{BaudDivisor}}$$
 
-*Where $\mathit{FUARTCLK}$ is the **7.38 MHz** Clock mentioned in the book.*
+Where $\mathit{FUARTCLK}$ is the **7.38 MHz** Clock mentioned in the book.
 
 For the Line Control Register, output the entire byte as a hexadecimal integer using the `%x` format specifier. The output should look like this:
 
