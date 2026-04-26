@@ -113,7 +113,7 @@ qemu-system-arm -M versatilepb -m 128M -kernel build/uart.bin -nographic -serial
 
 ## What to Turn In
 
-The files `src/start.s` and `src/main.c` should contain your modified code. When your code is run in QEMU, it should produce the output specified above.
+The files `src/start.s`, `src/main.c` and `uart.c` should contain your modified code. When your code is run in QEMU, it should produce the output specified above.
 
 Once you are finished:
 1. Commit and push your changes to your GitHub repository.
