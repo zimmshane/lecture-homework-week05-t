@@ -14,12 +14,20 @@ uint8_t uart_rate_divisors[] = {0x04, 0x0C, 0x18, 0x20, 0x30};
 int uart_init() {
   int i;
   UART* up;
-  for (i = 0; i < 4; i++) {  // uart0 to uart2 are adjacent
+  for (i = 0; i < 3; i++) {  // uart0 to uart2 are adjacent
     up = &uart[i];
     up->base = (char*)(0x101F1000 + i * 0x1000);
+    *(up->base + UARTIBRD) =  uart_rate_divisors[4-i];
+    *(up->base + UARTLCR) = 0x60;
     up->n = i;
   }
   uart[3].base = (char*)(0x10009000);  // uart3 at 0x10009000
+  *(uart[3].base + UARTIBRD) =  0x0C;
+  *(uart[3].base + UARTLCR) = 0x60;
+  uart[3].n = 3;
+  for (i=0; i < 4; i++){
+    
+  }
 }
 
 // input a char from UART pointed by up
